@@ -1,23 +1,40 @@
 import React,{Component} from 'react';
+import TextAnimater from '../components/TextAnimater';
+import AnimatedButton from '../components/AnimatedButton';
 import './Intro.css';
-
+var rows=[];
 class Intro extends Component{
   constructor(){
     super();
     this.state={
-      show:true
+      currentElement:''
     };
+    this.handleButtonClick = this.handleButtonClick.bind(this);
   }
   componentDidMount=()=>{
-    setInterval(()=>{
-      var st = this.state.show?false:true;
-      this.setState({show:st});
-    },5000)
+    rows.push('one','two','three','four');
+    var i=0;
+    var timer = setInterval(()=>{
+      this.setState({currentElement:rows[i]});
+
+      console.log("now done");
+      i++;
+      if(i>rows.length){
+        clearInterval(timer);
+      }
+    },2000)
+  }
+  handleButtonClick=()=>{
+    alert("Lets go");
   }
   render(){
     return(
       <div className='introWrapper'>
-        <h1 className={this.state.show?'animatedText animate':'animatedText exit'}>Hello...</h1>
+        <TextAnimater classKey="one"  currentElement={this.state.currentElement} content="Hello There!" />
+          <TextAnimater classKey="two" currentElement={this.state.currentElement} content="I'm IVY" />
+            <TextAnimater classKey="three" currentElement={this.state.currentElement}  content="A Conversational Chatbot" />
+            <TextAnimater classKey="four" currentElement={this.state.currentElement}  content="Lets go .... " />
+            <AnimatedButton currentElement={this.state.currentElement} content="Chat with Ivy" />
       </div>
     );
   }

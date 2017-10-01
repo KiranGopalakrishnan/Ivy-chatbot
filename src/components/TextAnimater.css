@@ -1,0 +1,47 @@
+
+.animatedText{
+ font-family: 'Roboto',sans-serif;
+ font-weight: 100;
+ color: #FFF;
+ transition: all 1s;
+ margin: 0 auto;
+ font-size: 0em;
+ transition: all 1s ease;
+ -webkit-backface-visibility: hidden;
+ backface-visibility: hidden;
+}
+.goButton{
+  border-radius: 10px;
+  background: #FFF;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 100;
+  color: #4a148c;
+  padding: 10px;
+  font-size: 0em;
+  display: flex;
+  flex-direction: column;
+  transition: all 1s ease;
+  opacity: 0;
+  -ms-transform: scale(-2,2); /* IE 9 */
+    -webkit-transform: scale(-2,-2); /* Safari */
+    transform: scale(-2,-2); /* Standard syntax */
+}
+.animate{
+ font-size: 4em;
+}
+.exit{
+ font-size: 0em;
+}
+.animate-button{
+  font-size: 2em;
+  opacity: 1;
+  -ms-transform: scale(1,1); /* IE 9 */
+    -webkit-transform: scale(1,1); /* Safari */
+    transform: scale(1,1); /* Standard syntax */
+}
+.stay{
+  font-size: 4em !important;
+}
+.last-item{
+  font-size: 4em;
+}
