@@ -13,8 +13,8 @@ class Intro extends Component{
   }
   render(){
     return(
-      <div className={this.state.show?'introWrapper animate':'introWrapper'}>
-        <h1>Welcome to IVY</h1>
+      <div className='introWrapper'>
+        <h1 className={this.state.show?'animate':'noAnimate'}>Welcome to IVY</h1>
       </div>
     );
   }
