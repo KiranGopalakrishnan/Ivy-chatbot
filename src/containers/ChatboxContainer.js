@@ -25,7 +25,7 @@ class ChatboxContainer extends Component {
     var xhttp = new XMLHttpRequest();
     var params = "userMessage="+textMessage;
     xhttp.onreadystatechange = function(){
-      if(this.readyState==4&&this.status==200){
+      if(this.readyState===4&&this.status===200){
         var response = JSON.parse(this.responseText);
         var aiTextResponse = response.result.fulfillment.speech;
         selfe.setNewMessage(aiTextResponse,false);
@@ -38,7 +38,7 @@ class ChatboxContainer extends Component {
   }
 
   addResponse=(message,responseBy)=>{
-    rows.push(<ChatBubble key={this.state.key} changed={this.state.newMessage} content={message} isUser={responseBy}/>);
+    rows.push(<ChatBubble key={this.state.key} content={message} isUser={responseBy}/>);
     var keyIncrement = this.state.key + 1;
     this.setState({key:keyIncrement});
   }

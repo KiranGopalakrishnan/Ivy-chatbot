@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import ChatboxContainer from './containers/ChatboxContainer';
+import Intro from './containers/Intro';
 import './App.css';
-import ChatboxContainer from './containers/ChatboxContainer'
-
 
 class App extends Component {
   constructor(){
     super();
+    this.state={
+      current:'intro'
+    };
   }
   componentDidMount(){
-    
+
   }
   render () {
     return (
+      <div className='mainWrapper'>
+      <div className='intro'>
+        <Intro current={this.state.current} />
+      </div>
       <div className='App'>
-        <ChatboxContainer />
+        <ChatboxContainer current={this.state.current} />
+      </div>
       </div>
     )
   }

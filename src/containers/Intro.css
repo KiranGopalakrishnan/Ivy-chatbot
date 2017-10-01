@@ -1,0 +1,30 @@
+.introWrapper{
+  transition: all 2s ease;
+  height: 100%;
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.animate{
+      /*background-position:right bottom;*/
+      animation:  colorChange 2s linear;
+      -webkit-animation: colorchange 2s linear;
+}
+.introWrapper h1{
+  font-family: 'Roboto',sans-serif;
+  font-size: 3em;
+  font-weight: 100;
+  color: #FFF;
+}
+@keyframes colorchange
+    {
+      0%   {background: #4a148c ;font-size: 4em;}
+      100%  {background: #4a148c;font-size: 1em;}
+
+    }
