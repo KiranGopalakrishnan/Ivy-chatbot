@@ -1,0 +1,30 @@
+.chatbox_container{
+  display: flex;
+  height: 100%;
+  max-height: inherit;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  border: solid 3px #FFF;
+  border-radius: 20px;
+}
+.chatbox_wrapper{
+  display: inherit;
+  flex: 8;
+  flex-direction: inherit;
+  height: 80%;
+  max-height: 500px;
+  padding: 10px;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+.messageBox_wrapper{
+  display: inherit;
+  flex: 2;
+  flex-direction: inherit;
+  min-height:20%;
+  align-items: center;
+  justify-content: center;
+}

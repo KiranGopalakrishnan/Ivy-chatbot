@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500');
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto',sans-serif;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  background: #4a148c;
+}
+#root{
+  min-height: 100%;
+  min-width: 100%;
+}
