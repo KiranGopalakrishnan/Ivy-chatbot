@@ -17,7 +17,7 @@
   padding: 10px;
   align-items: flex-end;
   justify-content: flex-end;
-  overflow-y: scroll;
+  overflow-y: auto;
   box-sizing: border-box;
 }
 .messageBox_wrapper{

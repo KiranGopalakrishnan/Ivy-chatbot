@@ -8,7 +8,8 @@ class ChatboxContainer extends Component {
   constructor(){
     super();
     this.state={
-      newMessage:''
+      newMessage:'',
+      key:0
     }
     this.sendMessage = this.sendMessage.bind(this);
     this.setNewMessage = this.setNewMessage.bind(this);
@@ -20,6 +21,7 @@ class ChatboxContainer extends Component {
   sendMessage(textMessage){
     this.setNewMessage(textMessage,true);
     var selfe = this;
+    //Ajax POST request
     var xhttp = new XMLHttpRequest();
     var params = "userMessage="+textMessage;
     xhttp.onreadystatechange = function(){
@@ -35,11 +37,13 @@ class ChatboxContainer extends Component {
     //rows.push(<ChatBubble isUser={false}/>);
   }
 
-  addResponse=(responseBy)=>{
-    rows.push(<ChatBubble content={this.state.newMessage} isUser={responseBy}/>);
+  addResponse=(message,responseBy)=>{
+    rows.push(<ChatBubble key={this.state.key} changed={this.state.newMessage} content={message} isUser={responseBy}/>);
+    var keyIncrement = this.state.key + 1;
+    this.setState({key:keyIncrement});
   }
   setNewMessage=(newMessageText,isUser)=>{
-    this.setState({newMessage:newMessageText},()=>{this.addResponse(isUser);});
+    this.setState({newMessage:newMessageText},()=>{this.addResponse(newMessageText,isUser);});
   }
   render() {
     return (
