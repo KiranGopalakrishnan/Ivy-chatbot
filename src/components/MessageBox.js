@@ -6,16 +6,17 @@ class MessageBox extends Component{
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
   handleKeyPress=(event)=>{
-    if(event.key==='Enter'){
+    if(event.key==='Enter'||(event.keyCode == 10 || event.keyCode == 13)){
+      event.preventDefault();
       var message = this.refs.textInput.value;
       this.props.onSubmit(message);
-      this.refs.textInput.value = "";
+      this.refs.textInput.value = '';
     }
   }
   render(){
     return (
       <div className='messageBox'>
-        <textarea className='textInput' ref='textInput' placeholder='Enter message' onKeyPress={this.handleKeyPress}></textarea>
+        <textarea className='textInput' ref='textInput' placeholder='Enter message' onKeyDown={this.handleKeyPress}></textarea>
       </div>
     );
   }

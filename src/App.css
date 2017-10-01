@@ -9,6 +9,8 @@
   flex-direction: column;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  position: relative;
 }
 .App {
   text-align: center;

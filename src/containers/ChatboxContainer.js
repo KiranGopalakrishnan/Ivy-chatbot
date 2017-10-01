@@ -40,15 +40,19 @@ class ChatboxContainer extends Component {
   addResponse=(message,responseBy)=>{
     rows.push(<ChatBubble key={this.state.key} content={message} isUser={responseBy}/>);
     var keyIncrement = this.state.key + 1;
-    this.setState({key:keyIncrement});
+    var selfe = this;
+    this.setState({key:keyIncrement},()=>{
+      var elem = selfe.refs.chatbox
+      elem.scrollTop = elem.scrollHeight;
+    });
   }
   setNewMessage=(newMessageText,isUser)=>{
     this.setState({newMessage:newMessageText},()=>{this.addResponse(newMessageText,isUser);});
   }
   render() {
     return (
-      <div className='chatbox_container'>
-      <div className="chatbox_wrapper">
+      <div className={this.props.currentElement==this.props.keyClass?'chatbox_container show-chatbox':'chatbox_container'}>
+      <div className="chatbox_wrapper" ref="chatbox">
       {rows}
       </div>
       <div className='messageBox_wrapper'>

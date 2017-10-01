@@ -1,3 +1,30 @@
+.single_chat_wrapper{
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+  padding: 10px 0px;
+  box-sizing: border-box;
+}
+.user-icon{
+  background: #FFF;
+  color: #000;
+  display: none;
+}
+.system-icon{
+  background: #f50057;
+  color: #FFF;
+  height: 25px;
+  width: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  padding: 3px;
+  font-family: 'Roboto',sans-serif;
+  font-size: 0.75em;
+  font-weight: 300;
+}
 .chatBubble{
   width: 25%;
   max-width: 25%;
@@ -14,8 +41,8 @@
   margin:5px 10px;
   padding: 5px;
   word-wrap: break-word;
-  position: relative;
   visibility: hidden;
+  box-sizing: border-box;
 }
 .user{
   border:solid 2px #FFF;

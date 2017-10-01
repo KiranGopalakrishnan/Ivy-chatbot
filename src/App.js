@@ -7,21 +7,21 @@ class App extends Component {
   constructor(){
     super();
     this.state={
-      current:'intro'
+      currentElement:'intro'
     };
+    this.loadNext= this.loadNext.bind(this);
   }
   componentDidMount(){
 
   }
+  loadNext=()=>{
+    this.setState({currentElement:'chat'})
+  }
   render () {
     return (
       <div className='mainWrapper'>
-      <div className='intro'>
-        <Intro current={this.state.current} />
-      </div>
-      <div className='App'>
-        <ChatboxContainer current={this.state.current} />
-      </div>
+        <Intro keyClass='intro' currentElement={this.state.currentElement} whenDone={this.loadNext} />
+        <ChatboxContainer keyClass='chat' currentElement={this.state.currentElement} />
       </div>
     )
   }

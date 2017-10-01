@@ -25,16 +25,16 @@ class Intro extends Component{
     },2000)
   }
   handleButtonClick=()=>{
-    alert("Lets go");
+    this.props.whenDone();
   }
   render(){
     return(
-      <div className='introWrapper'>
+      <div className={this.props.currentElement==this.props.keyClass?'introWrapper show-intro':'introWrapper'}>
         <TextAnimater classKey="one"  currentElement={this.state.currentElement} content="Hello There!" />
           <TextAnimater classKey="two" currentElement={this.state.currentElement} content="I'm IVY" />
             <TextAnimater classKey="three" currentElement={this.state.currentElement}  content="A Conversational Chatbot" />
             <TextAnimater classKey="four" currentElement={this.state.currentElement}  content="Lets go .... " />
-            <AnimatedButton currentElement={this.state.currentElement} content="Chat with Ivy" />
+            <AnimatedButton handleClick={this.handleButtonClick} currentElement={this.state.currentElement} content="Chat with Ivy" />
       </div>
     );
   }
